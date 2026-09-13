@@ -74,7 +74,7 @@ if (versions[manifest.version] !== manifest.minAppVersion) errors.push("versions
 if (releaseMedia.version !== manifest.version) errors.push("release media version does not match manifest");
 if (releaseMedia.publicSafeSample !== true) errors.push("release media must use a public-safe sample");
 if (manifest.isDesktopOnly !== false) errors.push("the optional HTTP companion must not make the plugin desktop-only");
-if (!packageJson.repository?.url?.endsWith("woonyong-kr/obsidian-runnable-code-blocks.git")) {
+if (!packageJson.repository?.url?.endsWith("woonyong-choi/obsidian-runnable-code-blocks.git")) {
   errors.push("package repository is not the approved source");
 }
 for (const file of [

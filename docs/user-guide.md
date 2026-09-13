@@ -148,7 +148,7 @@ Older `kotlinCompilerPath` or `javaPath` settings migrate to local-only executio
 
 ## Optional local runner
 
-The local runner is useful when a public provider is unavailable or source should remain on the desktop. It requires Node.js 22 and a running Docker-compatible engine. Download `runnable-code-blocks-local-runner.mjs` from the [separate companion release](https://github.com/woonyong-kr/obsidian-runnable-code-blocks/releases/tag/companion-0.7.8), then prepare only the languages you need:
+The local runner is useful when a public provider is unavailable or source should remain on the desktop. It requires Node.js 22 and a running Docker-compatible engine. Download `runnable-code-blocks-local-runner.mjs` from the [separate companion release](https://github.com/woonyong-choi/obsidian-runnable-code-blocks/releases/tag/companion-0.7.8), then prepare only the languages you need:
 
 ```bash
 node runnable-code-blocks-local-runner.mjs list

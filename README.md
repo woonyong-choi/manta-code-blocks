@@ -24,7 +24,7 @@ The result appears below the code. Edit the example and run again; **Copy** keep
 
 Seven browser fences work without an account or server. Other languages use an optional local companion or a named remote provider. Remote execution is enabled by default; disable it in settings to prevent remote submission.
 
-Manual installation: download `main.js`, `manifest.json`, and `styles.css` from [Releases](https://github.com/woonyong-kr/obsidian-runnable-code-blocks/releases/latest) into `.obsidian/plugins/runnable-code-blocks/`, then reload Obsidian.
+Manual installation: download `main.js`, `manifest.json`, and `styles.css` from [Releases](https://github.com/woonyong-choi/obsidian-runnable-code-blocks/releases/latest) into `.obsidian/plugins/runnable-code-blocks/`, then reload Obsidian.
 
 ![Runnable Code Blocks walkthrough](docs/assets/runnable-code-blocks-demo.gif)
 
@@ -32,6 +32,6 @@ Browser demo, September 9, 2026 (0.7.3); the illustrated controls are unchanged 
 
 ## Help and development
 
-[User guide](docs/user-guide.md) · [Report a problem](https://github.com/woonyong-kr/obsidian-runnable-code-blocks/issues) · [Community page](https://community.obsidian.md/plugins/runnable-code-blocks) · [Contributing](CONTRIBUTING.md)
+[User guide](docs/user-guide.md) · [Report a problem](https://github.com/woonyong-choi/obsidian-runnable-code-blocks/issues) · [Community page](https://community.obsidian.md/plugins/runnable-code-blocks) · [Contributing](CONTRIBUTING.md)
 
 [MIT](LICENSE) · [Third-party notices](THIRD_PARTY_NOTICES.md)

@@ -27,4 +27,4 @@ External reports guide investigation; they do not establish defects in this plug
 - Sending code to an unselected provider after an uncertain result.
 - Installing language runtimes or arbitrary packages inside the Community Plugin.
 
-Share a reproducible problem or use case through [Issues](https://github.com/woonyong-kr/obsidian-runnable-code-blocks/issues/new).
+Share a reproducible problem or use case through [Issues](https://github.com/woonyong-choi/obsidian-runnable-code-blocks/issues/new).

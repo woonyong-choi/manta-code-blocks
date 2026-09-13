@@ -48,11 +48,11 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/woonyong-kr/obsidian-runnable-code-blocks.git"
+    "url": "git+https://github.com/woonyong-choi/obsidian-runnable-code-blocks.git"
   },
   "homepage": "https://woonyong-choi.github.io/obsidian-runnable-code-blocks/",
   "bugs": {
-    "url": "https://github.com/woonyong-kr/obsidian-runnable-code-blocks/issues"
+    "url": "https://github.com/woonyong-choi/obsidian-runnable-code-blocks/issues"
   },
   "engines": {
     "node": ">=22"
