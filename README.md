@@ -10,7 +10,7 @@ Version: **0.7.9** · Obsidian **1.13.0+** · Desktop and mobile. See [release n
 
 ## Install and try
 
-1. In **Settings → Community plugins → Browse**, find **Manta Code Blocks**.
+1. Open the [existing Community entry](https://community.obsidian.md/plugins/runnable-code-blocks) in Obsidian. The entry may still show its previous name while the directory updates.
 2. Select **Install**, then **Enable**.
 3. Paste this block in a note, switch to Reading view, and select **Run**:
 
