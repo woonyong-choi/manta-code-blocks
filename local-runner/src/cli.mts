@@ -23,7 +23,7 @@ if (command === "prepare") {
   const config = await loadOrCreateConfig();
   const server = createRunnerServer({ engine, runnerVersion: RUNNER_VERSION, token: config.token });
   server.listen(config.port, "127.0.0.1", () => {
-    process.stdout.write(`Runnable Code Blocks Local Runner ${RUNNER_VERSION}\n`);
+    process.stdout.write(`Manta Code Blocks Local Runner ${RUNNER_VERSION}\n`);
     process.stdout.write(`Endpoint: http://127.0.0.1:${String(config.port)}\n`);
     process.stdout.write(`Pairing token: ${config.token}\n`);
     process.stdout.write(`Token fingerprint: ${tokenFingerprint(config.token)}\n`);
@@ -41,7 +41,7 @@ if (command === "prepare") {
     runnerVersion: RUNNER_VERSION
   });
   server.listen(config.port, "127.0.0.1", () => {
-    process.stdout.write(`Runnable Code Blocks Public Gateway ${RUNNER_VERSION}\n`);
+    process.stdout.write(`Manta Code Blocks Public Gateway ${RUNNER_VERSION}\n`);
     process.stdout.write(`Tunnel origin: http://127.0.0.1:${String(config.port)}\n`);
     process.stdout.write(`Public hostname: https://${config.hostname}\n`);
     process.stdout.write(`Allowed origins: ${config.allowedOrigins.join(", ")}\n`);

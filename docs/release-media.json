@@ -1,5 +1,5 @@
 {
-  "version": "0.7.8",
+  "version": "0.7.9",
   "capturedWith": "Static web adapter rendered in Chromium",
   "capturedAt": "2026-09-09",
   "publicSafeSample": true,
@@ -23,5 +23,6 @@
       "sha256": "68d17de8210e9b3bac9dc14a5703d9ab7ba8c268c66a77c29e585e68e523ece6"
     }
   ],
-  "capturedVersion": "0.7.3"
+  "capturedVersion": "0.7.3",
+  "reuseReason": "Retain public-safe browser execution examples from the captured version. This release also adds legacy Obsidian settings compatibility; these static-web captures do not demonstrate that repair or the new name."
 }

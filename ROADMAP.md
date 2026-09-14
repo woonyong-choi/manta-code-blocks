@@ -1,6 +1,6 @@
 # Roadmap
 
-Runnable Code Blocks helps readers experiment with code without leaving their notes. Temporary edits do not overwrite the Markdown source.
+Manta Code Blocks helps readers experiment with code without leaving their notes. Temporary edits do not overwrite the Markdown source.
 
 ## Available
 
@@ -27,4 +27,4 @@ External reports guide investigation; they do not establish defects in this plug
 - Sending code to an unselected provider after an uncertain result.
 - Installing language runtimes or arbitrary packages inside the Community Plugin.
 
-Share a reproducible problem or use case through [Issues](https://github.com/woonyong-choi/obsidian-runnable-code-blocks/issues/new).
+Share a reproducible problem or use case through [Issues](https://github.com/woonyong-choi/manta-code-blocks/issues/new).

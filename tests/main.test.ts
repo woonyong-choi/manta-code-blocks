@@ -7,7 +7,7 @@ const manifest: PluginManifest = {
   description: "Test manifest",
   id: "runnable-code-blocks",
   minAppVersion: "1.0.0",
-  name: "Runnable Code Blocks",
+  name: "Manta Code Blocks",
   version: "0.0.0"
 };
 

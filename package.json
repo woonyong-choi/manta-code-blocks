@@ -1,6 +1,6 @@
 {
   "name": "runnable-code-blocks",
-  "version": "0.7.8",
+  "version": "0.7.9",
   "description": "Run 24 Markdown code-block fences, including React JSX and TSX, in Obsidian and static websites.",
   "main": "main.js",
   "type": "module",
@@ -48,11 +48,11 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/woonyong-choi/obsidian-runnable-code-blocks.git"
+    "url": "git+https://github.com/woonyong-choi/manta-code-blocks.git"
   },
-  "homepage": "https://woonyong-choi.github.io/obsidian-runnable-code-blocks/",
+  "homepage": "https://woonyong-choi.github.io/manta-code-blocks/",
   "bugs": {
-    "url": "https://github.com/woonyong-choi/obsidian-runnable-code-blocks/issues"
+    "url": "https://github.com/woonyong-choi/manta-code-blocks/issues"
   },
   "engines": {
     "node": ">=22"

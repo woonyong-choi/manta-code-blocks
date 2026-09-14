@@ -1,6 +1,6 @@
 # Woon Obsidian plugin UI contract
 
-Runnable Code Blocks, Link Calendar Navigator, and Linked Graph Navigator share compact interaction patterns while each follows the active Obsidian theme.
+Manta Code Blocks, Link Calendar Navigator, and Linked Graph Navigator share compact interaction patterns while each follows the active Obsidian theme.
 
 ## Visual language
 
@@ -14,7 +14,7 @@ Runnable Code Blocks, Link Calendar Navigator, and Linked Graph Navigator share 
 
 ## Surface roles
 
-- Runnable Code Blocks maps editor, active line, execution state, and output to Obsidian semantic interface and code tokens.
+- Manta Code Blocks maps editor, active line, execution state, and output to Obsidian semantic interface and code tokens.
 - Link Calendar maps navigation, month grid selection, and daily agenda to toolbar, editor grid, and side tool window.
 - Linked Graph maps mode selection, graph canvas, and zoom controls to toolbar, editor canvas, and status controls.
 

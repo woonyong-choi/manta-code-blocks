@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.7.9
+
+- Rename the plugin to Manta Code Blocks and update its repository links.
+- Preserve the plugin ID, settings, commands, data formats, and all previous releases.
+- Add a legacy settings screen for existing Obsidian 1.12 installations, preserving local-runner opt-in, endpoint validation, secret selection, and provider order.
+
 ## 0.7.8
 
 - Refresh Community plugin installation instructions and fix the author and live demo links after the GitHub account rename.

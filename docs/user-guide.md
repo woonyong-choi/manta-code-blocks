@@ -1,10 +1,10 @@
-# Runnable Code Blocks user guide
+# Manta Code Blocks user guide
 
 [Back to the overview](../README.md)
 
 ## Try it in 60 seconds
 
-1. Open **Settings → Community plugins → Browse** and search for **Runnable Code Blocks**.
+1. Open **Settings → Community plugins → Browse** and search for **Manta Code Blocks**.
 2. Select **Install**, then **Enable**.
 3. Create a normal note and paste this entire fenced block:
 
@@ -24,7 +24,7 @@ Hello from Obsidian!
 
 This JavaScript example needs no account or separate server on a new installation: the default order tries the built-in Worker first. To prevent any remote submission, turn off **Remote execution** in plugin settings. Older installations can retain their chosen provider order.
 
-Prefer to try it without installation? Open the [live browser editor](https://woonyong-choi.github.io/obsidian-runnable-code-blocks/). Its host may choose a different provider order; check the environment label before running.
+Prefer to try it without installation? Open the [live browser editor](https://woonyong-choi.github.io/manta-code-blocks/). Its host may choose a different provider order; check the environment label before running.
 
 ## Everyday controls
 
@@ -135,7 +135,7 @@ Current native screenshots and the 0.7.3 popout checks use desktop Obsidian 1.13
 
 ## Settings
 
-Open **Settings → Community plugins → Runnable Code Blocks**:
+Open **Settings → Community plugins → Manta Code Blocks**:
 
 - **Local runner** — opt into the separately installed desktop companion.
 - **Local runner endpoint** — accepts only `http://127.0.0.1` or `http://localhost`.
@@ -148,7 +148,7 @@ Older `kotlinCompilerPath` or `javaPath` settings migrate to local-only executio
 
 ## Optional local runner
 
-The local runner is useful when a public provider is unavailable or source should remain on the desktop. It requires Node.js 22 and a running Docker-compatible engine. Download `runnable-code-blocks-local-runner.mjs` from the [separate companion release](https://github.com/woonyong-choi/obsidian-runnable-code-blocks/releases/tag/companion-0.7.8), then prepare only the languages you need:
+The local runner is useful when a public provider is unavailable or source should remain on the desktop. It requires Node.js 22 and a running Docker-compatible engine. Download `runnable-code-blocks-local-runner.mjs` from the [separate companion release](https://github.com/woonyong-choi/manta-code-blocks/releases/tag/companion-0.7.8), then prepare only the languages you need:
 
 ```bash
 node runnable-code-blocks-local-runner.mjs list

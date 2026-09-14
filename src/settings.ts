@@ -1,5 +1,5 @@
 import { normalizeLoopbackEndpoint, DEFAULT_LOCAL_RUNNER_ENDPOINT } from "./runners/local-companion-runner";
-import { App, Plugin, PluginSettingTab, SecretComponent, type SettingDefinitionItem } from "obsidian";
+import { App, Plugin, PluginSettingTab, SecretComponent, SettingGroup, type SettingDefinition } from "obsidian";
 import type { ExecutionOrder } from "./runner-composition";
 import { supportedLanguagesDescription } from "./supported-languages";
 
@@ -57,7 +57,45 @@ export class RunnableCodeBlocksSettingTab extends PluginSettingTab {
     this.#plugin = plugin;
   }
 
-  override getSettingDefinitions(): SettingDefinitionItem<RunnableSettingKey>[] {
+  override display(): void {
+    this.renderLegacy();
+  }
+
+  private renderLegacy(): void {
+    this.containerEl.replaceChildren();
+    const group = new SettingGroup(this.containerEl);
+    for (const definition of this.getSettingDefinitions()) {
+      const visible = typeof definition.visible === "function" ? definition.visible() : definition.visible;
+      if (visible === false) continue;
+      group.addSetting((setting) => {
+        setting.setName(definition.name);
+        if (definition.desc) setting.setDesc(definition.desc);
+        if (definition.render) definition.render(setting, group);
+        else if (definition.control) {
+          const control = definition.control;
+          const value = this.getControlValue(control.key);
+          if (control.type === "toggle") {
+            setting.addToggle((toggle) => toggle.setValue(Boolean(value))
+              .onChange((next) => this.setControlValue(control.key, next)));
+          } else if (control.type === "dropdown") {
+            setting.addDropdown((dropdown) => dropdown.addOptions(control.options)
+              .setValue(typeof value === "string" ? value : "")
+              .onChange((next) => this.setControlValue(control.key, next)));
+          } else if (control.type === "text") {
+            setting.addText((text) => text.setValue(typeof value === "string" ? value : "")
+              .setPlaceholder(control.placeholder ?? "")
+              .onChange(async (next) => {
+                const error = await control.validate?.(next);
+                setting.setDesc(error ?? definition.desc ?? "");
+                if (!error) await this.setControlValue(control.key, next);
+              }));
+          }
+        }
+      });
+    }
+  }
+
+  override getSettingDefinitions(): SettingDefinition<RunnableSettingKey>[] {
     return [
       {
         name: "Supported languages",
@@ -147,6 +185,9 @@ export class RunnableCodeBlocksSettingTab extends PluginSettingTab {
       return;
     }
     await this.#plugin.saveSettings();
+    if (key === "localExecutionEnabled" && typeof this.update !== "function" && this.containerEl.isConnected) {
+      this.renderLegacy();
+    }
   }
 }
 

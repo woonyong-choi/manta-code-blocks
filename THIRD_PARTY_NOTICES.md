@@ -31,7 +31,7 @@ SOFTWARE.
 ```
 
 
-Runnable Code Blocks includes @ampproject/worker-dom 0.36.0 by The AMP HTML Authors.
+Manta Code Blocks includes @ampproject/worker-dom 0.36.0 by The AMP HTML Authors.
 Upstream: https://github.com/ampproject/worker-dom
 License: Apache-2.0. The packaged runtime is unchanged; the application supplies its own restricted transport, sanitizer, and Worker lifecycle adapter.
 

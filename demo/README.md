@@ -1,4 +1,4 @@
-# Runnable Code Blocks demo
+# Manta Code Blocks demo
 
 Public-safe source captures, the deterministic GIF recipe, built output, and historical release evidence belong to this plugin repository. Versioned source captures stay under `captures/source/`; normalized 1600×900 frames stay under `captures/frames/`.
 

@@ -1,5 +1,5 @@
 import { App, SecretComponent, Setting, type Plugin, type SettingGroup } from "obsidian";
-import { describe, expect, it, vi } from "vitest";
+import { afterEach, describe, expect, it, vi } from "vitest";
 import {
   DEFAULT_SETTINGS,
   LOCAL_RUNNER_SECRET_ID,
@@ -7,6 +7,9 @@ import {
   RunnableCodeBlocksSettingTab,
   type RunnableCodeBlocksSettings
 } from "../src/settings";
+
+// Exercise the settings lifecycle exposed by Obsidian 1.12.
+function displayLegacy(tab: { display(): void }): void { tab.display(); }
 
 describe("normalizeSettings", () => {
   it("uses safe defaults for missing or malformed data", () => {
@@ -57,6 +60,7 @@ describe("normalizeSettings", () => {
 });
 
 describe("RunnableCodeBlocksSettingTab", () => {
+  afterEach(() => { document.body.replaceChildren(); vi.restoreAllMocks(); });
   function createTab() {
     const settings: RunnableCodeBlocksSettings = { ...DEFAULT_SETTINGS };
     const saveSettings = vi.fn(async () => undefined);
@@ -66,6 +70,51 @@ describe("RunnableCodeBlocksSettingTab", () => {
     };
     return { saveSettings, settings, tab: new RunnableCodeBlocksSettingTab(new App(), plugin) };
   }
+
+  it("renders the settings on Obsidian 1.12 without enabling a runner", () => {
+    const { tab, settings, saveSettings } = createTab();
+    displayLegacy(tab);
+    expect(tab.containerEl.querySelectorAll(".setting-item")).toHaveLength(4);
+    expect(tab.containerEl.querySelector('[data-name="Provider order"] select')).not.toBeNull();
+    expect(tab.containerEl.querySelector('[data-name="Pairing token"]')).toBeNull();
+    expect(settings.localExecutionEnabled).toBe(false);
+    expect(saveSettings).not.toHaveBeenCalled();
+  });
+
+  it("reveals local settings after opt-in and preserves endpoint validation", async () => {
+    const { tab, settings, saveSettings } = createTab();
+    const selectSecret = vi.spyOn(SecretComponent.prototype, "setValue");
+    document.body.append(tab.containerEl);
+    displayLegacy(tab);
+    const toggle = tab.containerEl.querySelector<HTMLInputElement>('[data-name="Local runner"] input');
+    if (!toggle) throw new Error("Missing local runner toggle");
+    toggle.checked = true;
+    toggle.dispatchEvent(new Event("change"));
+    await vi.waitFor(() => expect(tab.containerEl.querySelectorAll(".setting-item")).toHaveLength(6));
+    expect(selectSecret).toHaveBeenCalledWith(LOCAL_RUNNER_SECRET_ID);
+    const endpoint = tab.containerEl.querySelector<HTMLInputElement>('[data-name="Local runner endpoint"] input');
+    if (!endpoint) throw new Error("Missing endpoint field");
+    endpoint.value = "https://example.com";
+    endpoint.dispatchEvent(new Event("input"));
+    await vi.waitFor(() => expect(endpoint.closest<HTMLElement>(".setting-item")?.dataset.desc).toContain("loopback"));
+    expect(settings.localRunnerEndpoint).toBe(DEFAULT_SETTINGS.localRunnerEndpoint);
+    expect(saveSettings).toHaveBeenCalledOnce();
+    endpoint.value = "http://localhost:19191";
+    endpoint.dispatchEvent(new Event("input"));
+    await vi.waitFor(() => expect(saveSettings).toHaveBeenCalledTimes(2));
+    expect(settings.localRunnerEndpoint).toBe("http://localhost:19191");
+  });
+
+  it("persists provider selection through the legacy dropdown", async () => {
+    const { tab, settings, saveSettings } = createTab();
+    displayLegacy(tab);
+    const order = tab.containerEl.querySelector<HTMLSelectElement>('[data-name="Provider order"] select');
+    if (!order) throw new Error("Missing provider dropdown");
+    order.value = "remote-first";
+    order.dispatchEvent(new Event("change"));
+    await vi.waitFor(() => expect(saveSettings).toHaveBeenCalledOnce());
+    expect(settings.executionOrder).toBe("remote-first");
+  });
 
   it("selects a secret by name without exposing or overwriting its value", async () => {
     const { tab, settings, saveSettings } = createTab();
