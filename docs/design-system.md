@@ -1,6 +1,6 @@
 # Woon Obsidian plugin UI contract
 
-Manta Code Blocks, Link Calendar Navigator, and Linked Graph Navigator share compact interaction patterns while each follows the active Obsidian theme.
+Manta Code Blocks, Manta Calendar, and Manta Graph share compact interaction patterns while each follows the active Obsidian theme.
 
 ## Visual language
 
@@ -15,8 +15,8 @@ Manta Code Blocks, Link Calendar Navigator, and Linked Graph Navigator share com
 ## Surface roles
 
 - Manta Code Blocks maps editor, active line, execution state, and output to Obsidian semantic interface and code tokens.
-- Link Calendar maps navigation, month grid selection, and daily agenda to toolbar, editor grid, and side tool window.
-- Linked Graph maps mode selection, graph canvas, and zoom controls to toolbar, editor canvas, and status controls.
+- Manta Calendar maps navigation, month grid selection, and daily agenda to toolbar, editor grid, and side tool window.
+- Manta Graph maps mode selection, graph canvas, and zoom controls to toolbar, editor canvas, and status controls.
 
 The contract is intentionally a design and interaction contract, not a runtime dependency. Every Community Plugin release bundles its own CSS and continues to work when either of the other plugins is absent.
 
