@@ -1,12 +1,12 @@
-# Woon Obsidian plugin UI contract
+# Manta plugin UI contract
 
-Manta Code Blocks, Manta Calendar, and Manta Graph share compact interaction patterns while each follows the active Obsidian theme.
+Manta Code Blocks, Manta Calendar, and Manta Graph share compact interaction patterns and the Wiki's light and dark canvas colors. Interface text, borders, accents, and accessibility colors follow the active Obsidian theme.
 
 ## Visual language
 
 - Flat tool-window surfaces rather than floating cards.
-- The standalone demo uses a dark reference palette of `#1E1F22` canvas, `#2B2D30` toolbar, `#393B40` divider, `#3574F0` accent, and `#DFE1E5` text; the Community Plugin does not apply it inside Obsidian.
-- Obsidian semantic variables provide the corresponding light, dark, high-contrast, and host-theme values.
+- The Code Blocks canvas and toolbar use the Wiki background colors: `#ffffff` in light mode and `#0d1117` in dark mode, including the standalone demo. Forced-colors mode uses the system `Canvas` color.
+- Obsidian semantic variables provide interface text, dividers, accents, status colors, and muted surfaces.
 - One-pixel dividers, six-pixel control radii, no decorative card shadows, and compact 34–40 pixel toolbars.
 - Sixteen-pixel outline SVG icons with consistent optical weight.
 - Blue selection or underline for the active mode; muted dots and labels for status.
