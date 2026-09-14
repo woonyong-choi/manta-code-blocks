@@ -1,0 +1,48 @@
+{
+  "hyperframes": "0.8.38",
+  "source_sha256": "282cecfc00d0f3a991a66bc713537340ecbff47246dca8e8d0ad0657d1367881",
+  "inputs_sha256": {
+    "index.html": "282cecfc00d0f3a991a66bc713537340ecbff47246dca8e8d0ad0657d1367881",
+    "assets/action.js": "e6ce437b763cd7cb58a231f3ca7a5067aeb3c57000942307d83c19882ea0a4ea",
+    "assets/gsap.min.js": "c174bfce53a729418d57a8ad8625e7247c793a22fef8e2851e3cfa3de9cd8280",
+    "assets/product.css": "c8c8aceb5d5a8b09e01380f558cc1b692279a9e5991ce737bf6b3ef06402fecb",
+    "index.motion.json": "d85942ba3f479ef3c1afe2759b7ffe6b0b8ad0bb46fa22c9aa3709e92b667b09",
+    "inputs.json": "4fdf92292f331296cf2d33c90fafdeb7c797107c56d5bfe415e639463e55d1eb"
+  },
+  "outputs": [
+    {
+      "file": "manta-code-blocks-intro.mp4",
+      "bytes": 230107,
+      "sha256": "5a4d94f3c9d93b64f8f007b10d5dec0a0f4ceace1614c05d435b78bccfb95017",
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 1600,
+          "height": 900,
+          "avg_frame_rate": "60/1"
+        }
+      ],
+      "format": {
+        "duration": "6.000000"
+      }
+    },
+    {
+      "file": "manta-code-blocks-intro.gif",
+      "bytes": 612702,
+      "sha256": "791cfc064dc889628dc44b9907b10e83b77785df21f9d4d15beccc16ecaaaf2f",
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 1200,
+          "height": 675,
+          "avg_frame_rate": "25/1"
+        }
+      ],
+      "format": {
+        "duration": "6.000000"
+      }
+    }
+  ]
+}

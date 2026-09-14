@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.7.10
+
+- Match the published Wiki canvas in light and dark mode, preserving system colors in forced-colors mode.
+- Add six-second, automatically repeating introductions for both themes and link the four Manta plugins.
+
 ## 0.7.9
 
 - Rename the plugin to Manta Code Blocks and update its repository links.

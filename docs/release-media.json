@@ -1,5 +1,5 @@
 {
-  "version": "0.7.9",
+  "version": "0.7.10",
   "capturedWith": "Static web adapter rendered in Chromium",
   "capturedAt": "2026-09-09",
   "publicSafeSample": true,
@@ -24,5 +24,5 @@
     }
   ],
   "capturedVersion": "0.7.3",
-  "reuseReason": "Retain public-safe browser execution examples from the captured version. This release also adds legacy Obsidian settings compatibility; these static-web captures do not demonstrate that repair or the new name."
+  "reuseReason": "Preserve the earlier public runtime capture as a historical reference. New light/dark six-second introductions use the production view with public sample data; their separate receipts record renderer provenance. This release changes canvas colors and documentation, not navigation or execution behavior."
 }

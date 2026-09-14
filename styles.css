@@ -1,19 +1,27 @@
 .rcb {
   --rcb-accent: var(--interactive-accent, #3574f0);
-  --rcb-bg: var(--background-primary, #ffffff);
+  --rcb-bg: #ffffff;
   --rcb-bg-muted: var(--background-secondary, #f6f7f8);
   --rcb-border: var(--divider-color, var(--background-modifier-border, #d9dce1));
   --rcb-error: var(--text-error, #c9372c);
   --rcb-success: var(--text-success, var(--color-green, var(--text-normal, #176b35)));
   --rcb-text: var(--text-normal, #1f2328);
   --rcb-text-muted: var(--text-muted, #626a73);
-  --rcb-toolbar: var(--background-primary, #ffffff);
+  --rcb-toolbar: var(--rcb-bg);
   --rcb-font-interface: var(--font-interface, Inter, ui-sans-serif, sans-serif);
   --rcb-font-mono: var(--font-monospace, "JetBrains Mono", "SFMono-Regular", Consolas, monospace);
   --rcb-font-small: var(--font-ui-smaller, 11px);
   --rcb-radius: var(--radius-s, 6px);
   --rcb-control-height: var(--input-height, 30px);
   --rcb-focus-width: var(--focus-ring-width, 2px);
+}
+
+:is(.theme-dark, [data-wn-theme="dark"], [data-theme="dark"]) .rcb {
+  --rcb-bg: #0d1117;
+}
+
+@media (forced-colors: active) {
+  .rcb, :is(.theme-dark, [data-wn-theme="dark"], [data-theme="dark"]) .rcb { --rcb-bg: Canvas; }
 }
 
 .rcb {

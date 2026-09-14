@@ -21,6 +21,14 @@ Manta Code Blocks helps readers experiment with code without leaving their notes
 
 External reports guide investigation; they do not establish defects in this plugin. Initial comparisons cover [duplicate controls](https://github.com/twibiral/obsidian-execute-code/issues/455) and [preserving other plugins' classes](https://github.com/twibiral/obsidian-execute-code/issues/454).
 
+## Next: clear execution and recovery
+
+Keep input, output and the selected runtime visible together. Improve error locations, cancellation and recovery without duplicate execution. A planned external AI tool should inspect a selected fence before requesting a separate, explicit run through the same executor as the UI.
+
+Align type sizes, spacing, neutral surfaces, keyboard focus and status wording with the other Manta tools. Keep this plugin useful on its own. Measure first-use completion, manual corrections, recovery and repeat use against the same public inputs before claiming an improvement. These are planned changes.
+
+[Shared product direction and release criteria](https://github.com/woonyong-choi/manta-diagrams/blob/main/docs/product-direction.md)
+
 ## Out of scope
 
 - Automatically running code when a note opens.
