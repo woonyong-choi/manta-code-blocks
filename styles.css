@@ -1,6 +1,6 @@
 .rcb {
   --rcb-accent: var(--interactive-accent, #3574f0);
-  --rcb-bg: #ffffff;
+  --rcb-bg: light-dark(#ffffff, #0d1117);
   --rcb-bg-muted: var(--background-secondary, #f6f7f8);
   --rcb-border: var(--divider-color, var(--background-modifier-border, #d9dce1));
   --rcb-error: var(--text-error, #c9372c);
@@ -20,8 +20,12 @@
   --rcb-bg: #0d1117;
 }
 
+:is(.theme-light, [data-wn-theme="light"], [data-theme="light"]) .rcb {
+  --rcb-bg: #ffffff;
+}
+
 @media (forced-colors: active) {
-  .rcb, :is(.theme-dark, [data-wn-theme="dark"], [data-theme="dark"]) .rcb { --rcb-bg: Canvas; }
+  .rcb, :is(.theme-dark, .theme-light, [data-wn-theme], [data-theme]) .rcb { --rcb-bg: Canvas; }
 }
 
 .rcb {

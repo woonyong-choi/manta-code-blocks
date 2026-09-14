@@ -99,7 +99,7 @@ export default function PortalExample() {
   await expect(preview.getByText("Portal works")).toBeVisible();
 });
 
-test("inherits host theme tokens and shows a keyboard focus ring", async ({ page }) => {
+test("uses the Wiki canvas with host theme tokens and a keyboard focus ring", async ({ page }) => {
   await page.emulateMedia({ colorScheme: "dark" });
   await page.goto("/");
   const lesson = page.locator("[data-featured-test-case]");
@@ -109,7 +109,7 @@ test("inherits host theme tokens and shows a keyboard focus ring", async ({ page
     const style = getComputedStyle(element);
     return { background: style.backgroundColor, text: style.color };
   });
-  expect(colors.background).toBe("rgb(43, 45, 48)");
+  expect(colors.background).toBe("rgb(13, 17, 23)");
   expect(colors.text).toBe("rgb(223, 225, 229)");
 
   const blockIdentity = await block.evaluate((element) => {
@@ -117,6 +117,10 @@ test("inherits host theme tokens and shows a keyboard focus ring", async ({ page
     return element.getAttribute("data-theme-test");
   });
   expect(blockIdentity).toBe("mounted-once");
+  await page.locator("body").evaluate(element => element.classList.add("theme-light"));
+  await expect(block).toHaveCSS("background-color", "rgb(255, 255, 255)");
+  await page.locator("body").evaluate(element => element.classList.remove("theme-light"));
+  await expect(block).toHaveCSS("background-color", "rgb(13, 17, 23)");
   await page.emulateMedia({ colorScheme: "light" });
   await expect(block).toHaveCSS("background-color", "rgb(255, 255, 255)");
   await expect(block).toHaveAttribute("data-theme-test", "mounted-once");
