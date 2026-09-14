@@ -1,48 +1,211 @@
 {
   "hyperframes": "0.8.38",
+  "encoder_repository": "https://github.com/woonyong-choi/manta-diagrams",
+  "encoder_revision": "64dfeb3cf59cbf66aa429e0acbc932b923ff4352",
+  "encoder_sha256": "cf97747bf064964ee001906497564adc01e259a945a095d18bec501e0340eedb",
+  "composition": {
+    "product": "Manta Code Blocks",
+    "version": "0.7.9",
+    "provenance": "Production UI with public sample data; Obsidian host boundary replaced for Graph and Calendar. Timing condensed; not a native Obsidian recording."
+  },
   "source_sha256": "48a985b4b71057f48f2320aefbf6223d805fadd2092b018bb2be660a5f9d19be",
   "inputs_sha256": {
-    "index.html": "48a985b4b71057f48f2320aefbf6223d805fadd2092b018bb2be660a5f9d19be",
     "assets/action.js": "e6ce437b763cd7cb58a231f3ca7a5067aeb3c57000942307d83c19882ea0a4ea",
     "assets/gsap.min.js": "c174bfce53a729418d57a8ad8625e7247c793a22fef8e2851e3cfa3de9cd8280",
     "assets/product.css": "c8c8aceb5d5a8b09e01380f558cc1b692279a9e5991ce737bf6b3ef06402fecb",
+    "index.html": "48a985b4b71057f48f2320aefbf6223d805fadd2092b018bb2be660a5f9d19be",
     "index.motion.json": "d85942ba3f479ef3c1afe2759b7ffe6b0b8ad0bb46fa22c9aa3709e92b667b09",
     "inputs.json": "4fdf92292f331296cf2d33c90fafdeb7c797107c56d5bfe415e639463e55d1eb"
+  },
+  "input_sequence_sha256": "1218d4e06188c28c4c17b36596c32f144e5b7a7d50f4a89c6ecc9dcf9adc7e86",
+  "encoding": {
+    "alpha_composite_rgb": [
+      13,
+      17,
+      23
+    ],
+    "mp4": "libx264rgb CRF 0, full-range RGB, sRGB transfer; editing master",
+    "gif": "PNG RGB -> 25fps/1200px -> full histogram palette -> no dither; infinite loop"
+  },
+  "validation": {
+    "native_recording": false,
+    "browser_playback_verified": false,
+    "source_background_rgb": [
+      13,
+      17,
+      23
+    ],
+    "input_frames": 360,
+    "seam_review": "Decoded 800px boundary and execution samples visually reviewed; 5 GIF pixels at card corners differ by at most 3 channel levels. Code, toolbar and caption match.",
+    "original_composition_inputs_preserved": true,
+    "previous_media_commit": "4f7df47938fca25cb20e6e3a2a99ab48c1d66f62"
   },
   "outputs": [
     {
       "file": "manta-code-blocks-intro-dark.mp4",
-      "bytes": 237113,
-      "sha256": "322b188c08c91f2ed6da0c6160c9878edaf3058ac6e102ffa5e7fd2a5e94d101",
+      "bytes": 322725,
+      "sha256": "0c7ccc5fc1ef0b8bbec6e951d1945144a3da693af6e9b04c5e8dde8678729186",
       "programs": [],
       "stream_groups": [],
       "streams": [
         {
+          "profile": "High 4:4:4 Predictive",
           "width": 1600,
           "height": 900,
-          "avg_frame_rate": "60/1"
+          "pix_fmt": "gbrp",
+          "color_range": "pc",
+          "color_space": "gbr",
+          "avg_frame_rate": "60/1",
+          "nb_read_frames": "360"
         }
       ],
       "format": {
         "duration": "6.000000"
-      }
+      },
+      "decoded_background_rgb": [
+        13,
+        17,
+        23
+      ],
+      "background_unique_colors": 1,
+      "background_region": [
+        0,
+        0,
+        1600,
+        20
+      ],
+      "background_frames_checked": 360,
+      "first_last_pixels_equal": false,
+      "first_last_changed_pixels": 14,
+      "first_last_max_channel_delta": 1,
+      "boundary_matches_input": true
     },
     {
       "file": "manta-code-blocks-intro-dark.gif",
-      "bytes": 505160,
-      "sha256": "9abd51121c8d7381270aa3a41a689292b85c2d1407bf5e9b827cec651cc66345",
+      "bytes": 102546,
+      "sha256": "db08f5883791a2c4bf4cfa5d303f13bc55145b8c9ee843290196b5875eb1a778",
       "programs": [],
       "stream_groups": [],
       "streams": [
         {
           "width": 1200,
           "height": 675,
-          "avg_frame_rate": "25/1"
+          "pix_fmt": "bgra",
+          "avg_frame_rate": "25/1",
+          "nb_read_frames": "150"
         }
       ],
       "format": {
         "duration": "6.000000"
-      }
+      },
+      "decoded_background_rgb": [
+        13,
+        17,
+        23
+      ],
+      "background_unique_colors": 1,
+      "background_region": [
+        0,
+        0,
+        1200,
+        20
+      ],
+      "background_frames_checked": 150,
+      "first_last_pixels_equal": false,
+      "first_last_changed_pixels": 5,
+      "first_last_max_channel_delta": 3,
+      "boundary_matches_input": null
     }
-  ]
+  ],
+  "capture": {
+    "method": "Headless Chromium; original composition; explicit film timeline, DOM, fonts and assets readiness; GSAP seek at n/60",
+    "browser": "HeadlessChrome/131.0.6778.204",
+    "browser_flags": [
+      "--force-color-profile=srgb",
+      "--disable-gpu"
+    ],
+    "capture_date_epoch_ms": 0,
+    "dimensions": [
+      1600,
+      900
+    ],
+    "fps": 60,
+    "frames": 360,
+    "capture_script_sha256": "1805c6a59d6e9abbd70fa9c4fe1f9e603773b56b4c77b6632ccbcbce2d96cfb8",
+    "composition_files_changed": false,
+    "ready_before_first_frame": true,
+    "all_frames_replay_ready": true,
+    "browser_playback_verified": false,
+    "native_recording": false,
+    "replay_states": [
+      {
+        "time": 0.43333333333333335,
+        "shot": "shot-0",
+        "caption": "Change a value. Run the example.",
+        "icons": 0
+      },
+      {
+        "time": 1.2833333333333334,
+        "shot": "shot-1",
+        "caption": "See the result beside the code.",
+        "icons": 0
+      },
+      {
+        "time": 1.4333333333333333,
+        "shot": "shot-2",
+        "caption": "Try a different value.",
+        "icons": 0
+      },
+      {
+        "time": 1.8833333333333333,
+        "shot": "shot-3",
+        "caption": "Try a different value.",
+        "icons": 0
+      },
+      {
+        "time": 2.8333333333333335,
+        "shot": "shot-4",
+        "caption": "See the result beside the code.",
+        "icons": 0
+      },
+      {
+        "time": 2.9833333333333334,
+        "shot": "shot-5",
+        "caption": "Try a different value.",
+        "icons": 0
+      },
+      {
+        "time": 3.1166666666666667,
+        "shot": "shot-6",
+        "caption": "Try a different value.",
+        "icons": 0
+      },
+      {
+        "time": 3.5833333333333335,
+        "shot": "shot-7",
+        "caption": "Try a different value.",
+        "icons": 0
+      },
+      {
+        "time": 4.583333333333333,
+        "shot": "shot-8",
+        "caption": "See the result beside the code.",
+        "icons": 0
+      },
+      {
+        "time": 5.583333333333333,
+        "shot": "shot-9",
+        "caption": "Reset to the original example.",
+        "icons": 0
+      },
+      {
+        "time": 5.983333333333333,
+        "shot": "shot-10",
+        "caption": "Change a value. Run the example.",
+        "icons": 0
+      }
+    ],
+    "receipt_sha256": "0fd1d779edf38bda5e74e49fc92648f2ef374365ac9c7c97eb8e05133d7aa3f7",
+    "capture_clock_scope": "JavaScript Date in the isolated capture page only; original composition and product code unchanged"
+  }
 }
