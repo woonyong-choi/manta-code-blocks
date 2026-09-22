@@ -1,4 +1,4 @@
-<img src="docs/assets/product-icon.svg" alt="" width="48" height="48" />
+<img src="https://raw.githubusercontent.com/woonyong-choi/manta-code-blocks/main/docs/assets/product-icon.svg" alt="" width="48" height="48" />
 
 # Manta Code Blocks
 
@@ -9,8 +9,8 @@ Edit and run code without leaving your notes.
 Version: **0.7.10** · Obsidian **1.13.0+** · Desktop and mobile. See [release notes](CHANGELOG.md) for shipped changes and the [roadmap](ROADMAP.md) for work in progress and plans.
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="docs/assets/manta-code-blocks-intro-dark.gif">
-  <img src="docs/assets/manta-code-blocks-intro.gif" alt="Manta Code Blocks: edit a discount, run the code and compare the output" width="1200">
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/woonyong-choi/manta-code-blocks/main/docs/assets/manta-code-blocks-intro-dark.gif">
+  <img src="https://raw.githubusercontent.com/woonyong-choi/manta-code-blocks/main/docs/assets/manta-code-blocks-intro.gif" alt="Manta Code Blocks: edit a discount, run the code and compare the output" width="1200">
 </picture>
 
 A six-second loop of the current browser UI, with real JavaScript execution. Timing is condensed.
@@ -36,7 +36,7 @@ Manual installation: download `main.js`, `manifest.json`, and `styles.css` from 
 <details>
 <summary>Original runtime capture and recorded version</summary>
 
-![Manta Code Blocks walkthrough](docs/assets/runnable-code-blocks-demo.gif)
+![Manta Code Blocks walkthrough](https://raw.githubusercontent.com/woonyong-choi/manta-code-blocks/main/docs/assets/runnable-code-blocks-demo.gif)
 
 Browser demo, September 9, 2026 (0.7.3); the capture predates the Manta name.
 
