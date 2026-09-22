@@ -1,36 +1,180 @@
-.rcb {
-  --rcb-accent: var(--interactive-accent, #3574f0);
-  --rcb-bg: light-dark(#ffffff, #0d1117);
-  --rcb-bg-muted: var(--background-secondary, #f6f7f8);
-  --rcb-border: var(--divider-color, var(--background-modifier-border, #d9dce1));
-  --rcb-error: var(--text-error, #c9372c);
-  --rcb-success: var(--text-success, var(--color-green, var(--text-normal, #176b35)));
-  --rcb-text: var(--text-normal, #1f2328);
-  --rcb-text-muted: var(--text-muted, #626a73);
-  --rcb-toolbar: var(--rcb-bg);
-  --rcb-font-interface: var(--font-interface, Inter, ui-sans-serif, sans-serif);
-  --rcb-font-mono: var(--font-monospace, "JetBrains Mono", "SFMono-Regular", Consolas, monospace);
-  --rcb-font-small: var(--font-ui-smaller, 11px);
-  --rcb-radius: var(--radius-s, 6px);
-  --rcb-control-height: var(--input-height, 30px);
-  --rcb-focus-width: var(--focus-ring-width, 2px);
+/* tokens:begin — manta-tokens 가 생성한다. 직접 고치지 말 것. */
+/* manta-tokens — scripts/build.mjs 가 tokens.json 에서 생성한다. 직접 고치지 말 것. */
+
+:root,
+.manta-tokens {
+  --manta-bg: var(--background-primary, #ffffff);
+  --manta-surface: var(--background-secondary, #f4f6f8);
+  --manta-surface-raised: var(--background-secondary-alt, #eceff3);
+  --manta-border: var(--background-modifier-border, #c9cfd6);
+  --manta-border-strong: var(--background-modifier-border-hover, #8a929d);
+  --manta-divider: var(--divider-color, #e3e6ea);
+  --manta-text: var(--text-normal, #1f2328);
+  --manta-text-muted: var(--text-muted, #4b5563);
+  --manta-text-faint: var(--text-faint, #8a929d);
+  --manta-accent: var(--interactive-accent, #2b96ed);
+  --manta-accent-text: var(--text-on-accent, #ffffff);
+  --manta-key-bg: #1f2328;
+  --manta-key-text: #ffffff;
+  --manta-out-bg: #eaf3fc;
+  --manta-out-border: #9cc3e6;
+  --manta-series-1: #42764c;
+  --manta-series-2: #356eaa;
+  --manta-series-3: #896a28;
+  --manta-series-4: #81558d;
+  --manta-error: var(--text-error, #b42318);
+  --manta-warning: var(--text-warning, #b7791f);
+  --manta-success: var(--text-success, #176b35);
+
+  --manta-radius-xs: 3px;
+  --manta-radius-sm: var(--radius-s, 5px);
+  --manta-radius-md: var(--radius-m, 8px);
+  --manta-space-1: var(--size-4-1, 4px);
+  --manta-space-2: var(--size-4-2, 8px);
+  --manta-space-3: var(--size-4-3, 12px);
+  --manta-space-4: var(--size-4-4, 16px);
+  --manta-line-thin: 1px;
+  --manta-line-base: 1.2px;
+  --manta-font-sans: var(--font-text, "Pretendard Variable", Pretendard, "Apple SD Gothic Neo", "Noto Sans KR", system-ui, sans-serif);
+  --manta-font-ui: var(--font-interface, "Pretendard Variable", Pretendard, "Apple SD Gothic Neo", "Noto Sans KR", system-ui, sans-serif);
+  --manta-font-mono: var(--font-monospace, "JetBrains Mono Variable", ui-monospace, SFMono-Regular, Menlo, monospace);
+  --manta-size-xs: var(--font-ui-smaller, 11px);
+  --manta-size-sm: var(--font-ui-small, 12px);
+  --manta-size-md: var(--font-ui-medium, 13px);
+  --manta-size-lg: var(--font-ui-large, 15px);
+  --manta-size-xl: 18px;
+  --manta-control-height: var(--input-height, 30px);
+  --manta-control-focus-width: var(--focus-ring-width, 2px);
+  --manta-control-icon: var(--icon-size, 16px);
 }
 
-:is(.theme-dark, [data-wn-theme="dark"], [data-theme="dark"]) .rcb {
-  --rcb-bg: #0d1117;
+/* 다크: Obsidian 은 .theme-dark, 그 밖의 호스트는 prefers-color-scheme 으로 뒤집는다. */
+.theme-dark,
+[data-theme="dark"] {
+  --manta-bg: var(--background-primary, #0d1117);
+  --manta-surface: var(--background-secondary, #161b22);
+  --manta-surface-raised: var(--background-secondary-alt, #1c2430);
+  --manta-border: var(--background-modifier-border, #3d4754);
+  --manta-border-strong: var(--background-modifier-border-hover, #738091);
+  --manta-divider: var(--divider-color, #2a323d);
+  --manta-text: var(--text-normal, #e6edf3);
+  --manta-text-muted: var(--text-muted, #a4afbc);
+  --manta-text-faint: var(--text-faint, #738091);
+  --manta-accent: var(--interactive-accent, #79c0ff);
+  --manta-accent-text: var(--text-on-accent, #0d1117);
+  --manta-key-bg: #e6edf3;
+  --manta-key-text: #0d1117;
+  --manta-out-bg: #17293b;
+  --manta-out-border: #3b6ea5;
+  --manta-series-1: #9dc9a4;
+  --manta-series-2: #9cbfdf;
+  --manta-series-3: #dfc38a;
+  --manta-series-4: #c9a5d0;
+  --manta-error: var(--text-error, #ff7b72);
+  --manta-warning: var(--text-warning, #d29922);
+  --manta-success: var(--text-success, #3fb950);
 }
 
-:is(.theme-light, [data-wn-theme="light"], [data-theme="light"]) .rcb {
-  --rcb-bg: #ffffff;
+@media (prefers-color-scheme: dark) {
+  :root:not(.theme-light):not([data-theme="light"]) {
+    --manta-bg: var(--background-primary, #0d1117);
+    --manta-surface: var(--background-secondary, #161b22);
+    --manta-surface-raised: var(--background-secondary-alt, #1c2430);
+    --manta-border: var(--background-modifier-border, #3d4754);
+    --manta-border-strong: var(--background-modifier-border-hover, #738091);
+    --manta-divider: var(--divider-color, #2a323d);
+    --manta-text: var(--text-normal, #e6edf3);
+    --manta-text-muted: var(--text-muted, #a4afbc);
+    --manta-text-faint: var(--text-faint, #738091);
+    --manta-accent: var(--interactive-accent, #79c0ff);
+    --manta-accent-text: var(--text-on-accent, #0d1117);
+    --manta-key-bg: #e6edf3;
+    --manta-key-text: #0d1117;
+    --manta-out-bg: #17293b;
+    --manta-out-border: #3b6ea5;
+    --manta-series-1: #9dc9a4;
+    --manta-series-2: #9cbfdf;
+    --manta-series-3: #dfc38a;
+    --manta-series-4: #c9a5d0;
+    --manta-error: var(--text-error, #ff7b72);
+    --manta-warning: var(--text-warning, #d29922);
+    --manta-success: var(--text-success, #3fb950);
+}
+}
+
+/* 라이트를 고정한 호스트(인쇄·이력서 PDF)는 명시 선택자로 되돌린다. */
+.theme-light,
+[data-theme="light"] {
+  --manta-bg: var(--background-primary, #ffffff);
+  --manta-surface: var(--background-secondary, #f4f6f8);
+  --manta-surface-raised: var(--background-secondary-alt, #eceff3);
+  --manta-border: var(--background-modifier-border, #c9cfd6);
+  --manta-border-strong: var(--background-modifier-border-hover, #8a929d);
+  --manta-divider: var(--divider-color, #e3e6ea);
+  --manta-text: var(--text-normal, #1f2328);
+  --manta-text-muted: var(--text-muted, #4b5563);
+  --manta-text-faint: var(--text-faint, #8a929d);
+  --manta-accent: var(--interactive-accent, #2b96ed);
+  --manta-accent-text: var(--text-on-accent, #ffffff);
+  --manta-key-bg: #1f2328;
+  --manta-key-text: #ffffff;
+  --manta-out-bg: #eaf3fc;
+  --manta-out-border: #9cc3e6;
+  --manta-series-1: #42764c;
+  --manta-series-2: #356eaa;
+  --manta-series-3: #896a28;
+  --manta-series-4: #81558d;
+  --manta-error: var(--text-error, #b42318);
+  --manta-warning: var(--text-warning, #b7791f);
+  --manta-success: var(--text-success, #176b35);
 }
 
 @media (forced-colors: active) {
-  .rcb, :is(.theme-dark, .theme-light, [data-wn-theme], [data-theme]) .rcb { --rcb-bg: Canvas; }
+  :root,
+  .manta-tokens {
+  --manta-bg: Canvas;
+  --manta-surface: Canvas;
+  --manta-text: CanvasText;
+  --manta-border: CanvasText;
+  --manta-border-strong: CanvasText;
+}
+}
+
+/* rcb-* 는 manta 토큰의 별칭이다. 새 규칙은 --manta-* 를 직접 쓴다. */
+:root,
+.rcb {
+  --rcb-accent: var(--manta-accent);
+  --rcb-bg: var(--manta-bg);
+  --rcb-bg-muted: var(--manta-surface);
+  --rcb-toolbar: var(--manta-bg);
+  --rcb-border: var(--manta-border);
+  --rcb-error: var(--manta-error);
+  --rcb-success: var(--manta-success);
+  --rcb-text: var(--manta-text);
+  --rcb-text-muted: var(--manta-text-muted);
+  --rcb-font-interface: var(--manta-font-ui);
+  --rcb-font-mono: var(--manta-font-mono);
+  --rcb-font-small: var(--manta-size-xs);
+  --rcb-radius: var(--manta-radius-sm);
+  --rcb-control-height: var(--manta-control-height);
+  --rcb-focus-width: var(--manta-control-focus-width);
+}
+/* tokens:end */
+
+/* 플러그인 고유 치수. 디자인 토큰이 아니라 이 화면만의 레이아웃 값이다. */
+.rcb {
+  --rcb-icon-sm: 15px;
+  --rcb-size-micro: 9.5px;
+  --rcb-size-mini: 10.5px;
+  --rcb-toolbar-min-height: 24px;
+  --rcb-output-height: 120px;
+  --rcb-diagnostic-max-width: 440px;
+}
 }
 
 .rcb {
   background: var(--rcb-bg);
-  border: 1px solid var(--rcb-border);
+  border: var(--manta-line-thin) solid var(--rcb-border);
   border-radius: var(--rcb-radius);
   color: var(--rcb-text);
   font-family: var(--rcb-font-interface);
@@ -83,13 +227,13 @@
 .rcb__sr-only {
   border: 0;
   clip: rect(0, 0, 0, 0);
-  height: 1px;
+  height: var(--manta-line-thin);
   margin: -1px;
   overflow: hidden;
   padding: 0;
   position: absolute;
   white-space: nowrap;
-  width: 1px;
+  width: var(--manta-line-thin);
 }
 
 .rcb__toolbar,
@@ -101,35 +245,35 @@
 
 .rcb__toolbar {
   background: var(--rcb-toolbar);
-  border-bottom: 1px solid var(--rcb-border);
+  border-bottom: var(--manta-line-thin) solid var(--rcb-border);
   min-height: var(--rcb-control-height);
-  padding: var(--size-4-2, 8px) var(--size-4-3, 12px);
+  padding: var(--manta-space-2) var(--manta-space-3);
 }
 
 .rcb__identity,
 .rcb__actions {
   align-items: center;
   display: flex;
-  gap: 7px;
+  gap: var(--manta-space-2);
 }
 
 .rcb__file-icon {
   align-items: center;
   color: var(--rcb-accent);
   display: inline-flex;
-  height: 16px;
+  height: var(--manta-control-icon);
   justify-content: center;
-  width: 16px;
+  width: var(--manta-control-icon);
 }
 
 .rcb__icon {
   fill: none;
-  height: 15px;
+  height: var(--rcb-icon-sm);
   stroke: currentColor;
   stroke-linecap: round;
   stroke-linejoin: round;
   stroke-width: 1.7;
-  width: 15px;
+  width: var(--rcb-icon-sm);
 }
 
 .rcb__language {
@@ -142,22 +286,22 @@
   align-items: center;
   color: var(--rcb-text-muted);
   display: inline-flex;
-  font-size: 9.5px;
-  gap: 4px;
+  font-size: var(--rcb-size-micro);
+  gap: var(--manta-space-1);
   text-transform: uppercase;
 }
 
 .rcb__environment-dot {
   background: currentColor;
   border-radius: 50%;
-  height: 4px;
+  height: var(--manta-space-1);
   opacity: 0.55;
-  width: 4px;
+  width: var(--manta-space-1);
 }
 
 .rcb .rcb__button {
   align-items: center;
-  border: 1px solid transparent;
+  border: var(--manta-line-thin) solid transparent;
   border-radius: var(--rcb-radius);
   cursor: pointer;
   display: inline-flex;
@@ -165,7 +309,7 @@
   font-size: var(--rcb-font-small);
   font-weight: var(--font-medium, 500);
   justify-content: center;
-  gap: 4px;
+  gap: var(--manta-space-1);
   min-height: var(--rcb-control-height);
   min-width: var(--rcb-control-height);
   padding: 0;
@@ -173,7 +317,7 @@
 
 .rcb__button:focus-visible {
   outline: var(--rcb-focus-width) solid var(--rcb-accent);
-  outline-offset: 1px;
+  outline-offset: var(--manta-line-thin);
   box-shadow: none;
 }
 
@@ -184,7 +328,7 @@
 
 .rcb .rcb__button--run {
   background: var(--rcb-accent);
-  color: var(--text-on-accent, #ffffff);
+  color: var(--manta-accent-text);
 }
 
 .rcb .rcb__button--run:hover:not(:disabled) {
@@ -193,8 +337,8 @@
 
 .rcb__button-icon {
   fill: currentColor;
-  height: 16px;
-  width: 16px;
+  height: var(--manta-control-icon);
+  width: var(--manta-control-icon);
 }
 
 .rcb__button-icon--outline {
@@ -245,24 +389,24 @@
 .rcb__editor .cm-content,
 .rcb__editor .cm-gutters {
   font-family: var(--rcb-font-mono);
-  font-size: 13px;
+  font-size: var(--manta-size-md);
   line-height: 1.55;
 }
 
 .rcb .rcb__editor .cm-editor > .cm-scroller {
   scrollbar-gutter: auto;
   /* 100 source lines + the two numbered editing lines, including 16px content padding. */
-  max-height: var(--rcb-editor-max-height, calc(102lh + 16px));
+  max-height: var(--rcb-editor-max-height, calc(102lh + var(--manta-space-4)));
   overflow: auto;
 }
 
 /* Isolate nested editors from Obsidian's source-view folding gutter/layout. */
 .rcb .rcb__editor .cm-editor .cm-content {
-  padding: 7px 0 9px;
+  padding: var(--manta-space-2) 0 var(--manta-space-2);
 }
 
 .rcb .rcb__editor .cm-editor .cm-line {
-  padding: 0 8px;
+  padding: 0 var(--manta-space-2);
 }
 
 .rcb .rcb__editor .cm-editor .cm-gutters {
@@ -274,7 +418,7 @@
 }
 
 .rcb .rcb__editor .cm-lineNumbers .cm-gutterElement {
-  padding-inline: 9px 3px;
+  padding-inline: var(--manta-space-2) var(--manta-space-1);
 }
 
 .rcb__editor .cm-activeLine,
@@ -297,27 +441,27 @@
 
 .rcb__console {
   background: var(--rcb-bg);
-  border-top: 1px solid var(--rcb-border);
+  border-top: var(--manta-line-thin) solid var(--rcb-border);
 }
 
 .rcb__console-header {
   background: var(--rcb-toolbar);
-  border-bottom: 1px solid var(--rcb-border);
-  min-height: 24px;
-  padding: 0 10px;
+  border-bottom: var(--manta-line-thin) solid var(--rcb-border);
+  min-height: var(--rcb-toolbar-min-height);
+  padding: 0 var(--manta-space-3);
 }
 
 .rcb__console-title {
   color: var(--rcb-text);
-  font-size: 10.5px;
+  font-size: var(--rcb-size-mini);
   font-weight: var(--font-semibold, 600);
   letter-spacing: 0;
 }
 
 .rcb__console-meta {
   color: var(--rcb-text-muted);
-  font-size: 9.5px;
-  max-width: min(65%, 440px);
+  font-size: var(--rcb-size-micro);
+  max-width: min(65%, var(--rcb-diagnostic-max-width));
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -337,32 +481,32 @@
   box-shadow: none;
   color: var(--rcb-text);
   font-family: var(--rcb-font-mono);
-  font-size: 12px;
+  font-size: var(--manta-size-sm);
   line-height: 1.55;
   margin: 0;
   max-height: none;
   min-height: 0;
   overflow: visible;
-  padding: 9px 12px 11px;
+  padding: var(--manta-space-2) var(--manta-space-3) var(--manta-space-3);
   white-space: pre-wrap;
   word-break: break-word;
 }
 
 .rcb__preview {
-  background: #ffffff;
-  border-top: 1px solid var(--rcb-border);
+  background: var(--manta-bg);
+  border-top: var(--manta-line-thin) solid var(--rcb-border);
 }
 
 .rcb__preview-frame {
-  background: #ffffff;
+  background: var(--manta-bg);
   border: 0;
   display: block;
-  height: 120px;
+  height: var(--rcb-output-height);
   width: 100%;
 }
 
 .rcb__preview-frame[data-scripts="isolated"] {
-  height: 120px;
+  height: var(--rcb-output-height);
 }
 
 .rcb__dart-execution-frame {
@@ -376,11 +520,11 @@
 
 .rcb__notice {
   background: color-mix(in srgb, var(--rcb-error) 8%, transparent);
-  border-top: 1px solid color-mix(in srgb, var(--rcb-error) 22%, var(--rcb-border));
+  border-top: var(--manta-line-thin) solid color-mix(in srgb, var(--rcb-error) 22%, var(--rcb-border));
   color: var(--rcb-text-muted);
   font-size: var(--rcb-font-small);
   line-height: 1.45;
-  padding: 8px 12px;
+  padding: var(--manta-space-2) var(--manta-space-3);
 }
 
 .rcb[data-state="running"] .rcb__console-meta,
@@ -405,14 +549,14 @@
 }
 
 .rcb__details, .rcb__editing-hint {
-  padding: 8px 12px;
+  padding: var(--manta-space-2) var(--manta-space-3);
   color: var(--rcb-text-muted);
   font-size: var(--rcb-font-small);
   line-height: 1.5;
-  border-top: 1px solid var(--rcb-border);
+  border-top: var(--manta-line-thin) solid var(--rcb-border);
 }
 .rcb__details summary { cursor: pointer; }
-.rcb__diagnostic-text { padding-top: 8px; overflow-wrap: anywhere; }
+.rcb__diagnostic-text { padding-top: var(--manta-space-2); overflow-wrap: anywhere; }
 .rcb .rcb__editing-hint[hidden] { display: none; }
 .rcb__actions { flex-wrap: wrap; }
 @media (pointer: coarse) { .rcb .rcb__button { min-height: 44px; min-width: 44px; } }
