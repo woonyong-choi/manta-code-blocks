@@ -2,7 +2,11 @@
 
 # Manta Code Blocks
 
-Edit and run code without leaving your notes.
+Manta Code Blocks is an Obsidian Community plugin that turns `run-*` code fences into editable examples with inline output.
+
+- Seven browser runtimes work without an account. Other languages use an optional local container companion or a named remote provider.
+- Runtime adapters share one result contract. A failed provider is retried only when execution is known not to have started, so an unknown failure cannot run the same code twice.
+- Version 0.7.10 supports 24 language fences through 10 adapters. The repository test suite covers adapter selection, parsing, UI state, and release metadata.
 
 **[Install in Obsidian](https://community.obsidian.md/plugins/runnable-code-blocks) · [Try the live editor](https://woonyong-choi.github.io/manta-code-blocks/) · [User guide](docs/user-guide.md)**
 
@@ -44,9 +48,7 @@ Browser demo, September 9, 2026 (0.7.3); the capture predates the Manta name.
 
 ## Part of the Manta family
 
-Explain the process with a diagram, try the example, follow related notes and return to its dated review. [Manta Diagrams](https://github.com/woonyong-choi/manta-diagrams), [Manta Graph](https://github.com/woonyong-choi/manta-graph), [Manta Calendar](https://github.com/woonyong-choi/manta-calendar) each work on their own. Ordinary notes and links connect the work today; automatic handoffs are planned.
-
-**Manta itself is in development and has not been released.** I’m building it to turn source material into a personal wiki you can keep adding to. Shared AI tools and the full wiki workflow are still in development.
+The plugins work independently and share ordinary Markdown and links: [Manta Diagrams](https://github.com/woonyong-choi/manta-diagrams), [Manta Graph](https://github.com/woonyong-choi/manta-graph), and [Manta Calendar](https://github.com/woonyong-choi/manta-calendar).
 
 ## Help and development
 
