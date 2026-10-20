@@ -105,12 +105,19 @@ test("uses the Wiki canvas with host theme tokens and a keyboard focus ring", as
   const lesson = page.locator("[data-featured-test-case]");
   const block = lesson.locator(".rcb");
   await expect(block).toBeVisible();
+  // Issue #3: host surfaces must not replace the Wiki canvas.
+  await page.locator("body").evaluate(element => element.style.setProperty("--background-primary", "#2b2d30"));
   const colors = await block.evaluate((element) => {
     const style = getComputedStyle(element);
     return { background: style.backgroundColor, text: style.color };
   });
   expect(colors.background).toBe("rgb(13, 17, 23)");
   expect(colors.text).toBe("rgb(223, 225, 229)");
+  await expect(lesson.locator(".rcb__toolbar")).toHaveCSS("background-color", colors.background);
+  await page.locator("body").evaluate(element => element.style.setProperty("--text-normal", "#123456"));
+  await expect(block).toHaveCSS("color", "rgb(18, 52, 86)");
+  await page.locator("body").evaluate(element => element.style.removeProperty("--text-normal"));
+  await expect(block).toHaveCSS("color", colors.text);
 
   const blockIdentity = await block.evaluate((element) => {
     element.setAttribute("data-theme-test", "mounted-once");
@@ -119,10 +126,12 @@ test("uses the Wiki canvas with host theme tokens and a keyboard focus ring", as
   expect(blockIdentity).toBe("mounted-once");
   await page.locator("body").evaluate(element => element.classList.add("theme-light"));
   await expect(block).toHaveCSS("background-color", "rgb(255, 255, 255)");
+  await expect(lesson.locator(".rcb__toolbar")).toHaveCSS("background-color", "rgb(255, 255, 255)");
   await page.locator("body").evaluate(element => element.classList.remove("theme-light"));
   await expect(block).toHaveCSS("background-color", "rgb(13, 17, 23)");
   await page.emulateMedia({ colorScheme: "light" });
   await expect(block).toHaveCSS("background-color", "rgb(255, 255, 255)");
+  await expect(lesson.locator(".rcb__toolbar")).toHaveCSS("background-color", "rgb(255, 255, 255)");
   await expect(block).toHaveAttribute("data-theme-test", "mounted-once");
 
   const keyword = lesson.locator(".cm-content span").filter({ hasText: /^import$/u }).first();
@@ -508,4 +517,26 @@ test("bridges web TypeScript events once and prevents Worker DOM scripts from ex
   await expect(result.getByRole("button", { name: "Count 1" })).toBeVisible();
   await lesson.getByRole("button", { name: "Stop", exact: true }).click();
   await expect(lesson.getByRole("button", { name: "Run code" })).toBeEnabled();
+});
+
+
+test("keeps the system canvas and text in forced colors", async ({ page }) => {
+  await page.emulateMedia({ colorScheme: "dark", forcedColors: "active" });
+  await page.goto("/");
+  const block = page.locator("[data-featured-test-case] .rcb");
+  await expect(block).toBeVisible();
+  const systemColors = await page.evaluate(() => {
+    const probe = document.createElement("div");
+    probe.style.backgroundColor = "Canvas";
+    probe.style.color = "CanvasText";
+    document.body.append(probe);
+    const style = getComputedStyle(probe);
+    const colors = { background: style.backgroundColor, text: style.color };
+    probe.remove();
+    return colors;
+  });
+
+  await expect(block).toHaveCSS("background-color", systemColors.background);
+  await expect(block).toHaveCSS("color", systemColors.text);
+  await expect(block.locator(".rcb__toolbar")).toHaveCSS("background-color", systemColors.background);
 });
