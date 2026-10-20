@@ -525,6 +525,7 @@ test("keeps the system canvas and text in forced colors", async ({ page }) => {
   await page.goto("/");
   const block = page.locator("[data-featured-test-case] .rcb");
   await expect(block).toBeVisible();
+  await page.locator("body").evaluate(element => element.classList.add("theme-light"));
   const systemColors = await page.evaluate(() => {
     const probe = document.createElement("div");
     probe.style.backgroundColor = "Canvas";

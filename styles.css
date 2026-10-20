@@ -184,13 +184,11 @@
   }
 }
 
-.theme-dark .rcb,
-[data-theme="dark"] .rcb {
+:where(.theme-dark, [data-theme="dark"]) .rcb {
   --rcb-bg: #0d1117; /* tokens-allow: explicit host theme overrides the OS canvas */
 }
 
-.theme-light .rcb,
-[data-theme="light"] .rcb {
+:where(.theme-light, [data-theme="light"]) .rcb {
   --rcb-bg: #ffffff; /* tokens-allow: explicit host theme overrides the OS canvas */
 }
 
