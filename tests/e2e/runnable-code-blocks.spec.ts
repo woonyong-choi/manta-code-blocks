@@ -106,7 +106,10 @@ test("uses the Wiki canvas with host theme tokens and a keyboard focus ring", as
   const block = lesson.locator(".rcb");
   await expect(block).toBeVisible();
   // Issue #3: host surfaces must not replace the Wiki canvas.
-  await page.locator("body").evaluate(element => element.style.setProperty("--background-primary", "#2b2d30"));
+  await page.addStyleTag({ content: `
+    body.rcb-site { --background-primary: #2b2d30; }
+    body.rcb-site.rcb-host-text-test { --text-normal: #123456; }
+  ` });
   const colors = await block.evaluate((element) => {
     const style = getComputedStyle(element);
     return { background: style.backgroundColor, text: style.color };
@@ -114,9 +117,9 @@ test("uses the Wiki canvas with host theme tokens and a keyboard focus ring", as
   expect(colors.background).toBe("rgb(13, 17, 23)");
   expect(colors.text).toBe("rgb(223, 225, 229)");
   await expect(lesson.locator(".rcb__toolbar")).toHaveCSS("background-color", colors.background);
-  await page.locator("body").evaluate(element => element.style.setProperty("--text-normal", "#123456"));
+  await page.locator("body").evaluate(element => element.classList.add("rcb-host-text-test"));
   await expect(block).toHaveCSS("color", "rgb(18, 52, 86)");
-  await page.locator("body").evaluate(element => element.style.removeProperty("--text-normal"));
+  await page.locator("body").evaluate(element => element.classList.remove("rcb-host-text-test"));
   await expect(block).toHaveCSS("color", colors.text);
 
   const blockIdentity = await block.evaluate((element) => {
@@ -526,10 +529,10 @@ test("keeps the system canvas and text in forced colors", async ({ page }) => {
   const block = page.locator("[data-featured-test-case] .rcb");
   await expect(block).toBeVisible();
   await page.locator("body").evaluate(element => element.classList.add("theme-light"));
+  await page.addStyleTag({ content: ".rcb-system-color-probe { background-color: Canvas; color: CanvasText; }" });
   const systemColors = await page.evaluate(() => {
     const probe = document.createElement("div");
-    probe.style.backgroundColor = "Canvas";
-    probe.style.color = "CanvasText";
+    probe.className = "rcb-system-color-probe";
     document.body.append(probe);
     const style = getComputedStyle(probe);
     const colors = { background: style.backgroundColor, text: style.color };
