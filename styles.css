@@ -170,6 +170,33 @@
   --rcb-output-height: 120px;
   --rcb-diagnostic-max-width: 440px;
 }
+
+/* Resolve host text where the block is mounted, not on :root. */
+.rcb {
+  --rcb-text: var(--text-normal, var(--manta-text));
+  --rcb-toolbar: var(--rcb-bg);
+  --rcb-bg: #ffffff; /* tokens-allow: bundled Wiki canvas contract; upstream generator is unavailable */
+}
+
+@media (prefers-color-scheme: dark) {
+  .rcb {
+    --rcb-bg: #0d1117; /* tokens-allow: bundled Wiki dark canvas contract */
+  }
+}
+
+:where(.theme-dark, [data-theme="dark"]) .rcb {
+  --rcb-bg: #0d1117; /* tokens-allow: explicit host theme overrides the OS canvas */
+}
+
+:where(.theme-light, [data-theme="light"]) .rcb {
+  --rcb-bg: #ffffff; /* tokens-allow: explicit host theme overrides the OS canvas */
+}
+
+@media (forced-colors: active) {
+  .rcb {
+    --rcb-bg: Canvas; /* tokens-allow: system accessibility canvas */
+    --rcb-text: CanvasText; /* tokens-allow: system accessibility text */
+  }
 }
 
 .rcb {
