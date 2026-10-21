@@ -18,7 +18,7 @@ Manta Code Blocks, Manta Calendar, and Manta Graph share compact interaction pat
 - Manta Calendar maps navigation, month grid selection, and daily agenda to toolbar, editor grid, and side tool window.
 - Manta Graph maps mode selection, graph canvas, and zoom controls to toolbar, editor canvas, and status controls.
 
-The contract is intentionally a design and interaction contract, not a runtime dependency. Every Community Plugin release bundles its own CSS and continues to work when either of the other plugins is absent.
+This contract defines shared design and interaction patterns, not a runtime dependency. Every Community Plugin release bundles its own CSS and continues to work when either of the other plugins is absent.
 
 ## Density rules
 
@@ -27,5 +27,5 @@ The contract is intentionally a design and interaction contract, not a runtime d
 - Empty output, detail, and search regions do not reserve space.
 - Secondary actions stay quiet and appear only when relevant.
 - The primary Run action stays anchored at the toolbar end. During execution its icon and label become a spinner and `Running…` without moving the action edge.
-- Idle readiness stays out of the visual toolbar; running, success, failure, duration, and provider details belong to the Output tool-window header and an accessible live region.
+- Do not show idle readiness in the toolbar. Running, success, failure, duration, and provider details belong to the Output tool-window header and an accessible live region.
 - Primary content must remain usable at 390 CSS pixels without horizontal page overflow.
